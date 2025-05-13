@@ -1,0 +1,186 @@
+body {
+  /* margin: 0; */
+  font-family: "Courier New", Courier, monospace;
+}
+.invalid-feedback{
+  color: red;
+}
+/* background-color: #F9FAFB; */
+
+/* .black-square {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+} */
+
+/* .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #f4f4f4;
+  } */
+.gia-page {
+  font-family: monospace;
+  color: black;
+  background: white;
+}
+
+.gia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+
+.gia-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gia-square {
+  width: 1rem;
+  height: 1rem;
+  background: black;
+}
+
+.gia-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.gia-nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.gia-nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.gia-nav a:hover {
+  text-decoration: underline;
+}
+
+.gia-hero {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.gia-hero h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gia-start-button {
+  background: #ccc;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.gia-divider {
+  border: none;
+  border-top: 1px solid black;
+  margin: 0 1rem;
+}
+
+.gia-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.gia-section h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.gia-list {
+  text-align: left;
+  list-style-position: inside;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.gia-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.gia-pricing h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.gia-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gia-form input,
+.gia-form textarea {
+  width: 100%;
+  border: 1px solid black;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+.gia-form button {
+  background: #ccc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.gia-note {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.gia-footer {
+  text-align: right;
+  padding: 1rem;
+}
+
+.gia-top-button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .gia-pricing {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .desktop-line {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-line {
+    display: none;
+  }
+}
