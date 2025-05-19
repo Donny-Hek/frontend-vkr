@@ -1,6 +1,7 @@
 import React from "react";
 // import "../styles/HomePage.css";
 import '../styles/global.css';
+import { Link, Navigate } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -24,7 +25,7 @@ export default function HomePage() {
         <h2>
           Доверьте проверку бланков <br className="desktop-line" /> тестовой части нам!
         </h2>
-        <button className="gia-start-button">Начать проверку</button>
+        <Link to={"/login"} className="gia-start-button">Войти и начать проверку</Link>
       </section>
 
       <hr className="gia-divider" />
@@ -54,14 +55,7 @@ export default function HomePage() {
               <li>До 4 проверок/мес</li>
               <li>Результаты хранятся неделю после проверки</li>
             </ul>
-          </div>
-          <div>
-            <h4>&lt;Сумма&gt;/мес</h4>
-            <ul>
-              <li>До 40 фото/1 проверка</li>
-              <li>До 6 проверок/мес</li>
-              <li>Результаты хранятся, пока действует подписка, но не более 20 файлов</li>
-            </ul>
+            <h4>В процессе разработки...</h4>
           </div>
         </div>
       </section>

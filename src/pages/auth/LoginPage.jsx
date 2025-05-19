@@ -42,42 +42,54 @@ const LoginPage = () => {
   );
 
   return (
-    <div className="auth-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            name="email"
-            type="email"
-            {...register("email")}
-            className={errors.email ? "is-invalid" : ""}
-          />
-          {errors.email && (
-            <div className="invalid-feedback">{errors.email.message}</div>
-          )}
+    <div className="gia-page">
+      <header className="gia-header">
+        <div className="gia-square"></div>
+        <div className="gia-logo-block">
+          <h1 className="gia-title">Проверь ГИА</h1>
         </div>
+        <nav className="gia-nav">
+          <a href="/">О сайте</a>
+        </nav>
+        <div className="gia-square"></div>
+      </header>
+      <div className="gia-hero">
+        <h2>Войдите</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group">
+            <input
+              name="email"
+              type="email"
+              placeholder="Логин"
+              {...register("email")}
+              className={errors.email ? "is-invalid" : ""}
+            />
+            {errors.email && (
+              <div className="invalid-feedback">{errors.email.message}</div>
+            )}
+          </div>
 
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            {...register("password")}
-            className={errors.password ? "is-invalid" : ""}
-          />
-          {errors.password && (
-            <div className="invalid-feedback">{errors.password.message}</div>
-          )}
-        </div>
+          <div className="form-group">
+            <input
+              name="password"
+              type="password"
+              placeholder="Пароль"
+              {...register("password")}
+              className={errors.password ? "is-invalid" : ""}
+            />
+            {errors.password && (
+              <div className="invalid-feedback">{errors.password.message}</div>
+            )}
+          </div>
 
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-        <div className="auth-footer">
-        <Link to="/register">Зарегистрироваться</Link>
+          <button type="submit" className="gia-start-button">
+            Войти
+          </button>
+          <div className="auth-footer">
+            <Link to="/register">Зарегистрироваться</Link>
+          </div>
+        </form>
       </div>
-      </form>
     </div>
   );
 };

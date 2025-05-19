@@ -2,32 +2,27 @@ body {
   /* margin: 0; */
   font-family: "Courier New", Courier, monospace;
 }
-.invalid-feedback{
+.invalid-feedback {
   color: red;
 }
-/* background-color: #F9FAFB; */
-
-/* .black-square {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-} */
-
-/* .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #f4f4f4;
-  } */
+::placeholder {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  /* padding: 2.5rem 1rem; */
+  text-align: center;
+}
 .gia-page {
-  font-family: monospace;
+  font-family: "Courier New", Courier, monospace;
   color: black;
   background: white;
 }
-
+input {
+  margin: 0.2rem;
+  padding: 0.4rem;
+}
 .gia-header {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
@@ -78,12 +73,14 @@ body {
 }
 
 .gia-start-button {
-  background: #ccc;
+  background: #757575;
   color: white;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 9999px;
-  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  /* cursor: pointer; */
 }
 
 .gia-divider {
@@ -141,13 +138,13 @@ body {
   font-family: inherit;
 }
 
-.gia-form button {
+/* .gia-form button {
   background: #ccc;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
-}
+} */
 
 .gia-note {
   font-size: 0.9rem;
@@ -159,11 +156,12 @@ body {
   padding: 1rem;
 }
 
-.gia-top-button {
+button.gia-top-button {
+  outline: none;
   background: none;
   border: none;
-  text-decoration: underline;
-  cursor: pointer;
+  /* text-decoration: underline; */
+  /* cursor: pointer; */
   font-size: 0.9rem;
 }
 
