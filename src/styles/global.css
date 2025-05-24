@@ -1,5 +1,8 @@
 body {
   /* margin: 0; */
+  width: 70%;
+margin-left: auto;
+margin-right: auto;
   font-family: "Courier New", Courier, monospace;
 }
 .invalid-feedback {
@@ -22,7 +25,6 @@ input {
 }
 .gia-header {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;

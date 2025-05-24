@@ -7,8 +7,8 @@ export class AuthProvider extends Component {
   state = {
     user: null,
     isAuthenticated: false,
-    loading: true
-    // err:null
+    loading: true,
+    err:null
   };
 
   componentDidMount() {

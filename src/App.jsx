@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import { AuthProvider } from './context/AuthContext';
 // import PrivateRoute from './routes/PrivateRoute';
-// import NavBar from './components/NavBar';
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/auth/LoginPage";
-import RegisterPage from './pages/auth/RegisterPage';
+import RegisterPage from "./pages/auth/RegisterPage";
+import DashboardPage from "./pages/DashboardPage";
+import ProfilePage from "./pages/UserProfilePage";
 
 // import DashboardPage from './pages/DashboardPage';
 // import UserProfilePage from './pages/UserProfilePage';
@@ -19,8 +20,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+
           {/* <Route element={<PrivateRoute />}> */}
-            {/* <Route path="/dashboard" element={<DashboardPage />} />
+          {/* <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/profile" element={<UserProfilePage />} /> */}
           {/* </Route> */}
           {/* <PrivateRoute path="/dashboard" component={DashboardPage} /> */}
