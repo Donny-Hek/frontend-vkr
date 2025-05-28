@@ -18,7 +18,7 @@ export default function ProfilePage() {
         <p>Почта</p>
         <div className="bg-gray-500 text-white w-80 text-center">Поле для отображения почты</div>
       </div>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <input className={inputStyle} placeholder="Имя" />
         <input className={inputStyle} placeholder="Фамилия" />
         <input className={inputStyle} placeholder="Статус" />
@@ -27,7 +27,7 @@ export default function ProfilePage() {
           <button className={buttonStyle}>Изменить</button>
           <button className={buttonStyle}>Отменить</button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

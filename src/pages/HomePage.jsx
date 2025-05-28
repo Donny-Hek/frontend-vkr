@@ -1,6 +1,6 @@
 import React from "react";
 // import "../styles/HomePage.css";
-import '../styles/global.css';
+import "../styles/global.css";
 import { Link, Navigate } from "react-router-dom";
 
 export default function HomePage() {
@@ -13,9 +13,9 @@ export default function HomePage() {
           <h1 className="gia-title">Проверь ГИА</h1>
         </div>
         <nav className="gia-nav">
-          <a href="#">О нас</a>
-          <a href="#">Подписка</a>
-          <a href="#">Задать вопрос</a>
+          <Link to="/">О нас</Link>
+          <Link to="/login">Войти</Link>
+          <Link to="/register">Зарегистрироваться</Link>
         </nav>
         <div className="gia-square"></div>
       </header>
@@ -23,9 +23,12 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="gia-hero">
         <h2>
-          Доверьте проверку бланков <br className="desktop-line" /> тестовой части нам!
+          Доверьте проверку бланков <br className="desktop-line" /> тестовой
+          части нам!
         </h2>
-        <Link to={"/login"} className="gia-start-button">Войти и начать проверку</Link>
+        <Link to={"/login"} className="gia-start-button">
+          Войти и начать проверку
+        </Link>
       </section>
 
       <hr className="gia-divider" />
@@ -63,7 +66,7 @@ export default function HomePage() {
       <hr className="gia-divider" />
 
       {/* Feedback Form */}
-      <section className="gia-section">
+      {/* <section className="gia-section">
         <h3>Форма обратной связи</h3>
         <form className="gia-form">
           <input type="email" placeholder="Ваша почта для обратной связи" />
@@ -73,10 +76,11 @@ export default function HomePage() {
         <p className="gia-note">
           Задайте интересующий вас вопрос, мы будем рады на него ответить!
         </p>
-      </section>
+      </section> */}
 
       <footer className="gia-footer">
-        <button className="gia-top-button">Наверх</button>
+        <div className="gia-square"></div>
+        <div className="gia-square"></div>
       </footer>
     </div>
   );
