@@ -1,22 +1,43 @@
-import React from 'react';
+import React from "react";
 // import { inputStyle, buttonStyle, pageContainer, titleStyle } from '../components/SharedStyles';
 export const inputStyle = "border border-black p-2 w-80 text-center text-lg";
-export const buttonStyle = "bg-gray-400 text-white px-4 py-2 text-lg w-80 mt-2 disabled:opacity-50";
-export const pageContainer = "flex flex-col items-center justify-center min-h-screen space-y-4 font-serif";
+export const buttonStyle =
+  "bg-gray-400 text-white px-4 py-2 text-lg w-80 mt-2 disabled:opacity-50";
+export const pageContainer =
+  "flex flex-col items-center justify-center min-h-screen space-y-4 font-serif";
 export const titleStyle = "text-3xl font-bold mt-4";
 export default function ProfilePage() {
   return (
     <div className={pageContainer}>
+      <header className="gia-header">
+        <div className="gia-square"></div>
+        <div className="gia-logo-block">
+          <h1 className="gia-title">Проверь ГИА</h1>
+        </div>
+        <nav className="gia-nav">
+          <Link to="/profile">Кабинет</Link>
+        </nav>
+        <div className="gia-square"></div>
+      </header>
+      
       <h1 className={titleStyle}>Кабинет</h1>
       <div>
         <p>Имя</p>
-        <div className="bg-gray-500 text-white w-80 text-center">Поле для отображения имени</div>
+        <div className="bg-gray-500 text-white w-80 text-center">
+          Поле для отображения имени
+        </div>
         <p>Фамилия</p>
-        <div className="bg-gray-500 text-white w-80 text-center">Поле для отображения фамилии</div>
+        <div className="bg-gray-500 text-white w-80 text-center">
+          Поле для отображения фамилии
+        </div>
         <p>Статус</p>
-        <div className="bg-gray-500 text-white w-80 text-center">Поле для отображения статуса</div>
+        <div className="bg-gray-500 text-white w-80 text-center">
+          Поле для отображения статуса
+        </div>
         <p>Почта</p>
-        <div className="bg-gray-500 text-white w-80 text-center">Поле для отображения почты</div>
+        <div className="bg-gray-500 text-white w-80 text-center">
+          Поле для отображения почты
+        </div>
       </div>
       {/* <div className="mt-4">
         <input className={inputStyle} placeholder="Имя" />

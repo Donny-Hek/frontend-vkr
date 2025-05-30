@@ -16,16 +16,19 @@ const DashboardPage = () => {
       const dbSubjects = [
         {
           id: 1,
+          type: "ОГЭ",
           name: "Математика",
           templatePath: "/templates/math_template.xlsx",
         },
         {
           id: 2,
+          type: "ОГЭ",
           name: "Русский язык",
           templatePath: "/templates/russian_template.xlsx",
         },
         {
           id: 3,
+          type: "ОГЭ",
           name: "Физика",
           templatePath: "/templates/physics_template.xlsx",
         },
@@ -151,7 +154,7 @@ const DashboardPage = () => {
       {/* Info */}
       <div
         className="text-align: center;
-    justify-content: center;
+  justify-content: center;
   display: flex;
         "
       >
@@ -167,57 +170,61 @@ const DashboardPage = () => {
 
       <div className="form-file">
         <h2 className="">Начать проверку</h2>
-        <div className="form-field">
-          <label className="">1: Выберите тип и предмет экзамена </label>
+        <div className="form-fild">
           <select
             value={examTypes}
             onChange={(e) => setExamTypes(e.target.value)}
-            className={!examTypes ? "is-invalid" : ""}
+            className="form-fild"
             required
           >
-            <option value="form-field">-- Выберите экзамен --</option>
+            <option value="">1: Выберите тип и предмет экзамена</option>
             {subjects.map((subject) => (
-              <option key={subject.id} value={subject.name}>
-                {subject.name}
+              <option key={subject.id} value={subject}>
+                {subject.type} {subject.name}
               </option>
             ))}
           </select>
-          {!examTypes && <div className="invalid-feedback">* Обязательно</div>}
         </div>
-
-        <div className="form-field">
+        {!examTypes && <div className="invalid-feedback">* Обязательно</div>}
+        <div className="form-fild">
           <label className="">2: Скачайте и заполните шаблон с ответами</label>
-          {templatePath && (
-            <a href={templatePath} download className="">
-              Шаблон
-            </a>
-          )}
+
+          <a href={templatePath} download className="upload-button">
+            Шаблон
+          </a>
         </div>
 
-        <div className="form-field">
+        <div className="form-fild">
           <label className="">3: Загрузите ответы</label>
           <input
             type="file"
             accept=".xlsx"
             onChange={handleAnswersUpload}
-            className={!answerFile ? "is-invalid" : ""}
+            id="file-upload"
           />
-          {!answerFile && <div className="invalid-feedback">* Обязательно</div>}
+          <label for="file-upload" className="upload-button">
+            Загрузить
+          </label>
         </div>
+        {!answerFile && <div className="invalid-feedback">* Обязательно</div>}
 
-        <div className="form-field">
+        <div className="form-fild ">
           <label className="">4: Загрузите фото бланков</label>
           <input
             type="file"
             accept="image/*"
             multiple
             onChange={handlePhotosUpload}
-            className={!photoFiles ? "is-invalid" : ""}
+            id="img-upload"
+            // className="file:bg-gray-400 file:text-white file:px-4 file:py-2 file:rounded"
           />
-          {!photoFiles && <div className="invalid-feedback">* Обязательно</div>}
+          <label for="img-upload" className="upload-button">
+            Загрузить
+          </label>
         </div>
+        {!photoFiles && <div className="invalid-feedback">* Обязательно</div>}
 
-        <button onClick={handleSubmit} className="">
+        <button onClick={handleSubmit} className="gia-start-button">
           Отправить на проверку
         </button>
       </div>

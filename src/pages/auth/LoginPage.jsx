@@ -75,8 +75,9 @@ const LoginPage = () => {
               type="password"
               placeholder="Пароль"
               {...register("password")}
-              className={errors.password ? "is-invalid" : ""}
+              // className={errors.password ? "is-invalid" : ""}
             />
+            
             {errors.password && (
               <div className="invalid-feedback">{errors.password.message}</div>
             )}

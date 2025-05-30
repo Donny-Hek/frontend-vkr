@@ -82,6 +82,8 @@ input {
   border-radius: 9999px;
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
+  margin: 5px;
+
   /* cursor: pointer; */
 }
 
@@ -180,33 +182,52 @@ button.gia-top-button {
   max-width: 70%;
   justify-content: space-between;
 }
-
+.upload-button {
+  background-color: #ccc;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-left: auto;
+  white-space: nowrap;
+}
 .form-fild {
-  flex-direction:row;
+  /* flex-direction:row;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+  appearance: none;
+}
+select.form-fild {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  appearance: none; /* Убирает стандартный стиль браузера */
+  outline: none;
+  margin: 0%;
 }
 input[type="file"] {
   color: transparent;
-  /* margin: 0; */
-  display: flex;
+  margin: 0;
+  display: none;
   flex-flow: row wrap;
   margin-left: auto;
 }
 @media (min-width: 768px) {
-  .gia-pricing {
-    flex-direction: row;
-    justify-content: center;
-    gap: 3rem;
-  }
-
-  .desktop-line {
-    display: inline;
+  body {
+    min-width: 600px;
   }
 }
 
 @media (max-width: 767px) {
-  .desktop-line {
-    display: none;
+  body {
+    max-width: 767px;
   }
 }
