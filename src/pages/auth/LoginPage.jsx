@@ -62,7 +62,6 @@ const LoginPage = () => {
               type="email"
               placeholder="Логин"
               {...register("email")}
-              className={errors.email ? "is-invalid" : ""}
             />
             {errors.email && (
               <div className="invalid-feedback">{errors.email.message}</div>
@@ -75,7 +74,6 @@ const LoginPage = () => {
               type="password"
               placeholder="Пароль"
               {...register("password")}
-              // className={errors.password ? "is-invalid" : ""}
             />
             
             {errors.password && (

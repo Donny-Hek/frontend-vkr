@@ -9,7 +9,7 @@ const DashboardPage = () => {
   const [photoFiles, setPhotoFiles] = useState(null);
   // const [isReady, setIsReady] = useState(false);
   // const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [subjects, setSubjects] = useState([]);
   useEffect(() => {
     const fetchExamTypes = async () => {
@@ -127,10 +127,10 @@ const DashboardPage = () => {
 
   const handleSubmit = () => {
     if (!examTypes || !answerFile || photoFiles.length === 0) {
-      setError("Пожалуйста, заполните все обязательные поля.");
+      setError("* Обязательно");
       return;
     }
-    setError("");
+    // setError("");
     console.log("Submitted", { examTypes, answerFile, photoFiles });
   };
 
@@ -145,31 +145,29 @@ const DashboardPage = () => {
         <div className="gia-logo-block">
           <h1 className="gia-title">Проверь ГИА</h1>
         </div>
+
         <nav className="gia-nav">
           <Link to="/profile">Кабинет</Link>
+        </nav>
+        <nav className="gia-nav">
+          <a href="/">Выйти</a>
+          {/* <Link to="/dashboard">Проверить бланк</Link> */}
         </nav>
         <div className="gia-square"></div>
       </header>
 
       {/* Info */}
-      <div
-        className="text-align: center;
-  justify-content: center;
-  display: flex;
-        "
-      >
-        <p>У вас осталось проверок в этом месяце: 4</p>
+      <div>
+        <p style={{ "text-align": "center" }}>
+          У вас осталось проверок в этом месяце: 4
+        </p>
       </div>
 
       {/* Main form */}
-      <hr
-        className="align-items: center;
-  border-bottom: 1px solid black;
-  padding: 0.5rem 1rem;"
-      />
+      <hr />
 
       <div className="form-file">
-        <h2 className="">Начать проверку</h2>
+        <h2 className="form-file">Начать проверку</h2>
         <div className="form-fild">
           <select
             value={examTypes}
@@ -185,7 +183,7 @@ const DashboardPage = () => {
             ))}
           </select>
         </div>
-        {!examTypes && <div className="invalid-feedback">* Обязательно</div>}
+        {!examTypes && error && <div className="invalid-feedback">{error}</div>}
         <div className="form-fild">
           <label className="">2: Скачайте и заполните шаблон с ответами</label>
 
@@ -206,7 +204,9 @@ const DashboardPage = () => {
             Загрузить
           </label>
         </div>
-        {!answerFile && <div className="invalid-feedback">* Обязательно</div>}
+        {!answerFile && error && (
+          <div className="invalid-feedback">{error}</div>
+        )}
 
         <div className="form-fild ">
           <label className="">4: Загрузите фото бланков</label>
@@ -222,7 +222,9 @@ const DashboardPage = () => {
             Загрузить
           </label>
         </div>
-        {!photoFiles && <div className="invalid-feedback">* Обязательно</div>}
+        {!photoFiles && error && (
+          <div className="invalid-feedback">{error}</div>
+        )}
 
         <button onClick={handleSubmit} className="gia-start-button">
           Отправить на проверку

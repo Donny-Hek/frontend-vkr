@@ -59,6 +59,19 @@ input {
   color: black;
 }
 
+.gia-nav button {
+  text-decoration: none;
+  color: black;
+  border-radius: 8px; 
+  cursor: pointer;
+  background-color: transparent;
+  /* transition: background-color 0.3s; */
+  font-family: inherit;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
 .gia-nav a:hover {
   text-decoration: underline;
 }
@@ -182,6 +195,10 @@ button.gia-top-button {
   max-width: 70%;
   justify-content: space-between;
 }
+
+h2.form-fild{
+  text-align: center;
+}
 .upload-button {
   background-color: #ccc;
   padding: 8px 16px;
@@ -196,7 +213,7 @@ button.gia-top-button {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 5px;
   appearance: none;

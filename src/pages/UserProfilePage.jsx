@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import { inputStyle, buttonStyle, pageContainer, titleStyle } from '../components/SharedStyles';
 export const inputStyle = "border border-black p-2 w-80 text-center text-lg";
 export const buttonStyle =
@@ -6,40 +7,51 @@ export const buttonStyle =
 export const pageContainer =
   "flex flex-col items-center justify-center min-h-screen space-y-4 font-serif";
 export const titleStyle = "text-3xl font-bold mt-4";
-export default function ProfilePage() {
+
+const ProfilePage = () => {
+  const handleLogout = () => {
+    // localStorage.removeItem("token"); // Удаляем токен
+    // localStorage.removeItem("userData"); // Удаляем данные пользователя
+    sessionStorage.clear();
+    navigate("/");
+    window.location.reload();
+  };
   return (
-    <div className={pageContainer}>
+    <div>
       <header className="gia-header">
         <div className="gia-square"></div>
         <div className="gia-logo-block">
           <h1 className="gia-title">Проверь ГИА</h1>
         </div>
         <nav className="gia-nav">
-          <Link to="/profile">Кабинет</Link>
+          <Link to="/dashboard">Проверить бланк</Link>
+        </nav>
+        <nav className="gia-nav">
+          {/* <Link to="/profile">Кабинет</Link> */}
+          <a href="/">Выйти</a>
         </nav>
         <div className="gia-square"></div>
       </header>
-      
-      <h1 className={titleStyle}>Кабинет</h1>
-      <div>
-        <p>Имя</p>
-        <div className="bg-gray-500 text-white w-80 text-center">
-          Поле для отображения имени
+
+      <div className="form-file">
+        <h2 className="form-file">Кабинет</h2>
+        <div className="form-fild">
+          <p>Имя</p>
+          <p>Ленс</p>
         </div>
-        <p>Фамилия</p>
-        <div className="bg-gray-500 text-white w-80 text-center">
-          Поле для отображения фамилии
+        <div className="form-fild">
+          <p>Фамилия</p>
+          <p>Свитс</p>
         </div>
-        <p>Статус</p>
-        <div className="bg-gray-500 text-white w-80 text-center">
-          Поле для отображения статуса
+        <div className="form-fild">
+          <p>Статус</p>
+          <p>Прочее</p>
         </div>
-        <p>Почта</p>
-        <div className="bg-gray-500 text-white w-80 text-center">
-          Поле для отображения почты
+        <div className="form-fild">
+          <p>Почта</p>
+          <p>afjh@gmail.com</p>
         </div>
-      </div>
-      {/* <div className="mt-4">
+        {/* <div className="mt-4">
         <input className={inputStyle} placeholder="Имя" />
         <input className={inputStyle} placeholder="Фамилия" />
         <input className={inputStyle} placeholder="Статус" />
@@ -49,6 +61,12 @@ export default function ProfilePage() {
           <button className={buttonStyle}>Отменить</button>
         </div>
       </div> */}
+      </div>
+      <footer className="gia-footer">
+        <div className="gia-square"></div>
+        <div className="gia-square"></div>
+      </footer>
     </div>
   );
-}
+};
+export default ProfilePage;
